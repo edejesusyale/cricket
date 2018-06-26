@@ -1,0 +1,64 @@
+<%= render :partial => 'show_tools' %>
+
+<dl class="dl-horizontal  dl-invert ladybird-info" id="ladybird-info">
+  <dt>View More:</dt>
+  <dd><button class="btn btn-primary moreinfo_link">Open</button></dd>
+  <dd><% document = @document %> </dd>
+</dl>
+<script>
+    $('.moreinfo_link').click( function() {
+        $('#moreinfo-dialog').appendTo('body');
+        $('#moreinfo-dialog').modal('show');
+        return false;
+    });
+</script>
+<!-- Modal -->
+<div class="modal fade" id="moreinfo-dialog" tabindex="-1" role="dialog" aria-labelledby="moreinfo-dialog-title" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="moreinfo-dialog-title">More Info For <%= document['id'] %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+        </div>
+        <div class="more-info-body">
+          <ul>
+              <li><span class="item-key"><%= "asdf" %></span> <span class="item-value"><%= "1"  %></span></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .item-key {
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+  }
+  .item-value {
+  }
+  .more-info-body {
+    overflow: auto; max-height: 400px; margin-top: 10px
+  }
+  #ladybird-info  dt {
+    float: left;
+    text-align: right;
+    margin-right: 5px;
+  }
+</style>
+<% unless @document.more_like_this.empty? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">More Like This</div>
+    <div class="panel-body">
+      <%= render :collection => @document.more_like_this, :partial => 'show_more_like_this', :as => :document %>
+    </div>
+  </div>
+<% end %>

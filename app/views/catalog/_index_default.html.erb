@@ -1,0 +1,23 @@
+<% doc_presenter = index_presenter(document) %>
+<%# default partial to display solr document fields in catalog index view -%>
+<dl class="document-metadata dl-horizontal dl-invert">
+
+  <% index_fields(document).each do |field_name, field| -%>
+  <!--done for weird formatting issue-->
+    <% if should_render_index_field? document, field %>
+        <!-- checks if field is null and if so displays empty-->
+        <%@nofield = false %>
+
+    <% else @nofield = true%>
+    <% end -%>
+    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_index_field_label document, field: field_name %></dt>
+    <dd class="blacklight-<%= field_name.parameterize %>"><%= (@nofield) ? '[]': (doc_presenter.field_value field) %></dd>
+    <% if field_name == 'oid_isi' %>
+      <dt class="blacklight-<%= field_name.parameterize %>"><%= render_index_field_label document, field: 'LadyBird' %></dt>
+      <dd class="blacklight-<%= field_name.parameterize %>"><%= "http://ladybird.library.yale.edu/object_overview.aspx?qoid=#{field.value}"%></dd>
+      <!-- FOR WHEN I KNOW OID GETS RETURNED
+      dd class="blacklight-<%= field_name.parameterize %>"><%= link_to("Click Here","http://ladybird.library.yale.edu/object_overview.aspx?qoid=#{field.value}")%></dd-->
+    <% end%>
+  <% end -%>
+
+</dl>

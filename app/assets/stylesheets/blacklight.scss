@@ -1,0 +1,285 @@
+
+@import 'bootstrap-sprockets';
+
+@import 'bootstrap';
+
+@import 'blacklight/blacklight';
+
+$yale-blue: #01346b;
+$gallery-border: #EEE;
+$bootstrap-lg: 992px;
+$bootstrap-md: 768px;
+$bootstrap-sm: 576px;
+
+@font-face {
+  font-family: 'YaleDesign';
+  src: font-url('yaledesign-medium-webfont.eot');
+  src: font-url('yaledesign-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('yaledesign-medium-webfont.woff') format('woff'),
+  font-url('yaledesign-medium-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YaleDesign';
+  src: font-url('yaledesign-bold-webfont.eot');
+  src: font-url('yaledesign-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('yaledesign-bold-webfont.woff') format('woff'),
+  font-url('yaledesign-bold-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YaleDesign';
+  src: font-url('yaledesign-italic-webfont.eot');
+  src: font-url('yaledesign-italic-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('yaledesign-italic-webfont.woff') format('woff'),
+  font-url('yaledesign-italic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'YaleDesign';
+  src: font-url('yaledesign-bolditalic-webfont.eot');
+  src: font-url('yaledesign-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('yaledesign-bolditalic-webfont.woff') format('woff'),
+  font-url('yaledesign-bolditalic-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'YaleDesign-SmallCap';
+  src: font-url('yaledessmacap-webfont.eot');
+  src: font-url('yaledessmacap-webfont.eot?#iefix') format('embedded-opentype'),
+  font-url('yaledessmacap-webfont.woff') format('woff'),
+  font-url('yaledessmacap-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TheSans-ExtraLight';
+  src: font-url('TheSans_B2_200_.eot');
+  src: font-url('TheSans_B2_200_.eot?#iefix') format('embedded-opentype'), url('/assets/TheSans_B2_200_.woff') format('woff'), url('/assets/TheSans_B2_200_.svg') format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-ExtraLightItalic';
+  src: url("fonts/TheSans_B2_200i.eot");
+  src: url("fonts/TheSans_B2_200i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_200i.woff") format("woff"), url("/assets/TheSans_B2_200i.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-Light';
+  src: url("fonts/TheSans_B2_300_.eot");
+  src: url("fonts/TheSans_B2_300_.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_300_.woff") format("woff"), url("/assets/TheSans_B2_300_.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-LightItalic';
+  src: url("fonts/TheSans_B2_300i.eot");
+  src: url("fonts/TheSans_B2_300i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_300i.woff") format("woff"), url("/assets/TheSans_B2_300i.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-SemiLight';
+  src: url("fonts/TheSans_B2_400_.eot");
+  src: url("fonts/TheSans_B2_400_.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_400_.woff") format("woff"), url("/assets/TheSans_B2_400_.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-SemiLightItalic';
+  src: url("fonts/TheSans_B2_400i.eot");
+  src: url("fonts/TheSans_B2_400i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_400i.woff") format("woff"), url("/assets/TheSans_B2_400i.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-Plain';
+  src: url("fonts/TheSans_B2_500_.eot");
+  src: url("fonts/TheSans_B2_500_.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_500_.woff") format("woff"), url("/assets/TheSans_B2_500_.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-PlainItalic';
+  src: url("fonts/TheSans_B2_500i.eot");
+  src: url("fonts/TheSans_B2_500i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_500i.woff") format("woff"), url("/assets/TheSans_B2_500i.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-SemiBold';
+  src: url("fonts/TheSans_B2_600_.eot");
+  src: url("fonts/TheSans_B2_600_.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_600_.woff") format("woff"), url("/assets/TheSans_B2_600_.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-SemiBoldItalic';
+  src: url("fonts/TheSans_B2_600i.eot");
+  src: url("fonts/TheSans_B2_600i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_600i.woff") format("woff"), url("/assets/TheSans_B2_600i.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-Bold';
+  src: url("fonts/TheSans_B2_700_.eot");
+  src: url("fonts/TheSans_B2_700_.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_700_.woff") format("woff"), url("/assets/TheSans_B2_700_.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-BoldItalic';
+  src: url("fonts/TheSans_B2_700i.eot");
+  src: url("fonts/TheSans_B2_700i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_700i.woff") format("woff"), url("/assets/TheSans_B2_700i.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-ExtraBold';
+  src: url("fonts/TheSans_B2_800_.eot");
+  src: url("fonts/TheSans_B2_800_.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_800_.woff") format("woff"), url("/assets/TheSans_B2_800_.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-ExtraBoldItalic';
+  src: url("fonts/TheSans_B2_800i.eot");
+  src: url("fonts/TheSans_B2_800i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_800i.woff") format("woff"), url("/assets/TheSans_B2_800i.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-Black';
+  src: url("fonts/TheSans_B2_900_.eot");
+  src: url("fonts/TheSans_B2_900_.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_900_.woff") format("woff"), url("/assets/TheSans_B2_900_.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'TheSans-BlackItalic';
+  src: url("fonts/TheSans_B2_900i.eot");
+  src: url("fonts/TheSans_B2_900i.eot?#iefix") format("embedded-opentype"), url("/assets/TheSans_B2_900i.woff") format("woff"), url("/assets/TheSans_B2_900i.svg") format("svg");
+}
+
+
+body {
+  font-family: "TheSans-Light", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#header-navbar .navbar-brand {
+  background: transparent image-url("library_logo_white.png");
+  width:  250px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#header-navbar {
+  background: $yale-blue;
+  color: #fff;
+  font-family: "TheSans-SemiLight", "Helvetica-Neue", Arial, sans-serif;
+  font-size: 1.2em;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff
+}
+
+
+.navbar-header {
+  font-family: "TheSans-SemiLight", "Helvetica-Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 2.5em;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1.5%;
+  margin-top: .8%
+}
+
+.navbar-header a {
+  text-decoration: none;
+  color: #891b17;
+}
+
+.no_thumb {
+  display:none;
+}
+
+.blacklight-catalog-index.gallery, .blacklight-bookmarks-index.gallery{
+
+  #documents .document {
+    border: 4px solid $gallery-border;
+    margin: 5px;
+    width: 30%;
+    float: left;
+    height: 400px;
+    padding: 5px;
+
+    @media screen and (max-width: $bootstrap-lg) {
+      width: 46%;
+    }
+    @media screen and (max-width: $bootstrap-sm) {
+      width: 98%;
+    }
+
+  }
+  .document .row div,h3 {
+    float: none;
+    width: auto;
+  }
+  .document .row div.no_thumb {
+    background: #DDD;
+    width: 120px;
+    height: 150px;
+    margin: auto;
+    display: block;
+    padding-top: 20px;
+  }
+  #documents .document .row h3 a {
+    font-weight:bold;
+  }
+  .document-thumbnail {
+    text-align: center;
+  }
+  .document-thumbnail img {
+    max-height: 150px;
+    max-width: 100%;
+    width: auto;
+
+  }
+  .document-metadata {
+    max-height: 100px;
+    overflow: auto;
+  }
+
+  .dl-horizontal dd {
+    margin-left:0;
+  }
+  .dl-horizontal dt {
+    float:none;
+    width:auto;
+    text-align:left;
+  }
+  .toggle_bookmark {
+    margin-top:-7px;
+  }
+  .toggle_bookmark input{
+    margin-top:4px;
+  }
+
+  .documentHeader {
+    background: $gallery-border;
+    overflow: hidden;
+    margin: -5px -5px 10px -5px;
+  }
+
+}
+.blacklight-default_archivaldigitized, .blacklight-archivaldigitized, .blacklight-defaultdigitized {
+  .document-title-heading a:after {
+    font-family: 'Glyphicons Halflings';
+    content: ' \002a';
+    font-size: 9px;
+  }
+}
+
+
+.ladybird-info {
+  background: #EEE;
+  border: 2px #DDD solid;
+  padding: 10px 0;
+
+}
